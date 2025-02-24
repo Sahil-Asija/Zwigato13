@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="gift-card-container">
+        <header class="header">
+            <button class="back-button">&lt;</button>
+            <h2>Gift Cards</h2>
+            <button class="help-button">Help</button>
+        </header>
+
+        <div class="card-categories">
+            <button class="category active" onclick="birthday()">Birthday</button>
+            <button class="category" onclick="anniversary()">Anniversary</button>
+            <button class="category" onclick="sorry()">Sorry</button>
+            <button class="category" onclick="thankYou()">Thankyou</button>
+        </div>
+
+        <div id="card-selection">
+            <div class="card" onclick="applyBorder1()">
+                <img src="https://static.vecteezy.com/system/resources/previews/011/669/935/non_2x/happy-birthday-banner-background-happy-birthday-to-you-text-with-party-elements-like-balloons-gifts-and-confetti-for-birth-day-celebration-greeting-card-design-illustration-vector.jpg" alt="">
+            </div>
+            <div class="card" onclick="applyBorder2()">
+                <img src="https://www.bettergiftflowers.com/wp-content/uploads/2024/04/tum-jiyo-hazaaron-saal-web.jpg" alt="">
+            </div>
+            <div class="card" onclick="applyBorder3()">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfrP5ZsfJINYDmZ9A4YzqQcFxM8F5MZ9Z8Pg&s" alt="">
+            </div>
+        </div>
+
+        <div class="amount-selection">
+            <h3>Choose Amount</h3>
+            <div class="amount-options">
+                <button class="amount">₹1,000</button>
+                <button class="amount selected">₹2,000 <span class="popular-tag">POPULAR</span></button>
+                <button class="amount">₹5,000</button>
+                <button class="amount">Custom</button>
+            </div>
+        </div>
+
+        <div class="message-section">
+            <label for="message">Add Message (Optional)</label>
+            <br>
+            <textarea id="message" placeholder="Have a yumazing birthday!"></textarea>
+        </div>
+
+        <a href="Paytm Options.html"><button class="continue-button">Continue</button></a>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

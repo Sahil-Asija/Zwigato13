@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <script>
+        // Function to calculate GST and update the total
+        function calculateTotal() {
+            const itemTotal = 635; // Example values
+            const deliveryFee = 55;
+            const platformFee = 10;
+            const gstRate = 18 / 100; // 18% GST
+
+            const subtotal = itemTotal + deliveryFee + platformFee;
+            const gstAmount = subtotal * gstRate;
+            const totalAmount = subtotal + gstAmount;
+
+            // Update GST and Total in the DOM
+            document.getElementById('gst-charges').innerText = `₹${gstAmount.toFixed(2)}`;
+            document.getElementById('total-to-pay').innerText = `₹${totalAmount.toFixed(2)}`;
+        }
+
+        // Call the function when the page loads
+        window.onload = calculateTotal;
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                    <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-3.3l-.85-.6C7.8 11.24 7 10.17 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.17-.8 2.24-2.15 3.1z"/>
+                </svg>
+            </div>
+            <span style="font-weight: 600">SECURE CHECKOUT</span>
+        </div>
+        <div class="user-controls">
+            <span style="margin-right: 20px">Help</span>
+            <span>Account</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="delivery-section">
+            <h2>Select delivery address</h2>
+            <p style="color: #666">You have a saved address in this location</p>
+            
+            <div class="address-box">
+                <div style="flex: 1">
+                    <div style="font-weight: 500">Home</div>
+                    <div style="color: #666; font-size: 14px">XYZ XRDC JKF, Mumbai Central, Mumbai, Maharashtra 400008, India</div>
+                    <div style="color: #666; margin-top: 5px">13 MINS</div>
+                </div>
+                <button class="deliver-btn">DELIVER HERE</button>
+            </div>
+
+            <button class="add-new-btn">
+                <span style="margin-right: 5px">+</span> ADD NEW
+            </button>
+        </div>
+
+        <div class="order-summary">
+            <div style="display: flex; align-items: center; margin-bottom: 20px">
+                <!-- <img alt="McDonald's logo, fast food chain icon" src="mcdonalds-logo.png" style="width: 40px; height: 40px; margin-right: 10px"> -->
+                <div>
+                    <div style="font-weight: 500">Bill Details</div>
+                    <!-- <div style="color: #666; font-size: 14px">Mumbai Central</div> -->
+                    <!-- <h3>Bill Details</h3> -->
+                </div>
+            </div>
+
+            <div class="bill-details">
+                <div class="bill-row">
+                    <span>Item Total</span>
+                    <span>₹635</span>
+                </div>
+                <div class="bill-row">
+                    <span>Delivery Fee</span>
+                    <span>₹55</span>
+                </div>
+                <div class="bill-row">
+                    <span>Platform Fee</span>
+                    <span>₹10</span>
+                </div>
+                <div class="bill-row">
+                    <span>GST and Restaurant Charges</span>
+                    <span id="gst-charges">₹0.00</span>
+                </div>
+                <div class="bill-row total-row">
+                    <span>TO PAY</span>
+                    <span id="total-to-pay">₹0.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="pay">
+            <h2>Choose Payment Method</h2>
+            <a href="Paytm Options.html" style="text-decoration: none;"><button class="Proceed">
+                PROCEED TO PAY
+            </button></a>
+        </div>
+    </div>
+</body>
+</html>
