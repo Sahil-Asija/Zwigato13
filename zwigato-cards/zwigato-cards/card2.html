@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Restaurant Cards</title>
+    <link rel="stylesheet" href="card2.css">
+</head>
+<body>
+    <div id="premiumRestaurant-outer"> 
+        <div class="premium-restaurant-container">
+          <header class="header">
+              <button class="back-button" id="back-restaurant-button">&lt;</button>
+              <h2>Premium Dining</h2>
+              <button class="help-button">Help</button>
+          </header>
+    
+          <div class="cuisine-categories">
+              <button class="category active" onclick="showItalian()">Italian</button>
+              <button class="category" onclick="showJapanese()">Japanese</button>
+              <button class="category" onclick="showIndian()">Indian</button>
+              <button class="category" onclick="showFrench()">French</button>
+              <button class="category" onclick="showMediterranean()">Mediterranean</button>
+          </div>
+    
+          <div id="restaurant-selection">
+              <div class="restaurant-card" onclick="selectRestaurant(1)">
+
+                  <div class="restaurant-info">
+                      <h4>La Trattoria</h4>
+                      <div class="rating">★★★★★ <span class="reviews">(120)</span></div>
+                  </div>
+              </div>
+              <div class="restaurant-card" onclick="selectRestaurant(2)">
+                  <div class="restaurant-info">
+                      <h4>Pizzeria Napoli</h4>
+                      <div class="rating">★★★★☆ <span class="reviews">(85)</span></div>
+                  </div>
+              </div>
+              <div class="restaurant-card" onclick="selectRestaurant(3)">
+                  <div class="restaurant-info">
+                      <h4>Pasta Palace</h4>
+                      <div class="rating">★★★★★ <span class="reviews">(210)</span></div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="reservation-section">
+              <div class="date-time">
+                  <div class="date-selector">
+                      <label for="date">Select Date</label>
+                      <input type="date" id="date">
+                  </div>
+                  <div class="time-selector">
+                      <label for="time">Select Time</label>
+                      <select id="time">
+                          <option>18:00</option>
+                          <option>19:00</option>
+                          <option>20:00</option>
+                          <option>21:00</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="guests">
+                  <label for="guests">Number of Guests</label>
+                  <select id="guests">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5+</option>
+                  </select>
+              </div>
+              <div class="special-requests">
+                  <label for="requests">Special Requests (Optional)</label>
+                  <textarea id="requests" placeholder="Any dietary restrictions or special occasions?"></textarea>
+              </div>
+          </div>
+    
+          <button class="reserve-button">Reserve Now</button>
+        </div>
+    </div>
+    
+    <script>
+        function selectRestaurant(id) {
+        
+            document.querySelectorAll('.restaurant-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            
+            document.querySelectorAll('.restaurant-card')[id-1].classList.add('selected');
+        }
+        
+        function showItalian() {
+            updateCategorySelection('Italian');
+        }
+        
+        function showJapanese() {
+            updateCategorySelection('Japanese');
+        }
+        
+        function showIndian() {
+            updateCategorySelection('Indian');
+        }
+        
+        function showFrench() {
+            updateCategorySelection('French');
+
+        }
+        
+        function showMediterranean() {
+            updateCategorySelection('Mediterranean');
+        
+        }
+        
+        function updateCategorySelection(category) {
+            document.querySelectorAll('.category').forEach(btn => {
+                btn.classList.remove('active');
+            });
+    
+            document.querySelector(`.category:nth-child(${Array.from(document.querySelectorAll('.category')).findIndex(el => el.textContent === category) + 1})`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

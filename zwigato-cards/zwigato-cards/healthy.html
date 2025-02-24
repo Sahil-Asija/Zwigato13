@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Healthy Foods.</title>
+    <link rel="stylesheet" href="healthy.css">
+</head>
+<body>
+    <div id="top10Restaurants-outer"> 
+        <div class="top10-restaurants-container">
+          <header class="header">
+              <button class="back-button" id="back-top10-button">&lt;</button>
+              <h2>Top Healthy Foods</h2>
+              <button class="filter-button">Filter</button>
+          </header>
+    
+          <div class="location-filter">
+              <button class="location active">New York</button>
+              <button class="location">Tokyo</button>
+              <button class="location">Paris</button>
+              <button class="location">London</button>
+              <button class="location">Mumbai</button>
+          </div>
+    
+          <div class="year-selector">
+              <button class="year-nav prev-year">◀</button>
+              <span class="current-year">2025</span>
+              <button class="year-nav next-year">▶</button>
+          </div>
+    
+          <div class="ranking-list">
+              <div class="restaurant-rank" onclick="viewRestaurant(1)">
+                  <div class="rank-number">1</div>
+                
+                  <div class="restaurant-details">
+                      <h3>Avocado toast</h3>
+                      <div class="accolades">
+                          <span class="michelin">★★★</span>
+                      
+                      </div>
+                  </div>
+                  <div class="view-more"></div>
+              </div>
+              
+              <div class="restaurant-rank" onclick="viewRestaurant(2)">
+                  <div class="rank-number">2</div>
+                 
+                  <div class="restaurant-details">
+                      <h3>Apple yoghurt</h3>
+                      <div class="accolades">
+                          <span class="michelin">★★★</span>
+                      </div>
+                  </div>
+                  <div class="view-more"></div>
+              </div>
+              
+              <div class="restaurant-rank" onclick="viewRestaurant(3)">
+                  <div class="rank-number">3</div>
+                  
+                  <div class="restaurant-details">
+                      <h3>Brinjal and beetroot chips.</h3>
+
+                      <div class="accolades">
+                          <span class="michelin">★★★</span>
+
+                      </div>
+                  </div>
+                  <div class="view-more"></div>
+              </div>
+              
+              <div class="restaurant-rank" onclick="viewRestaurant(4)">
+                  <div class="rank-number">4</div>
+        
+                  <div class="restaurant-details">
+                      <h3>Bok Choy Salad</h3>
+                      <div class="accolades">
+                          <span class="michelin">★★</span>
+                      </div>
+                  </div>
+                  <div class="view-more"></div>
+              </div>
+              
+              <div class="restaurant-rank" onclick="viewRestaurant(5)">
+                  <div class="rank-number">5</div>
+                  
+                  <div class="restaurant-details">
+                      <h3>Granola Crumb</h3>
+
+                      <div class="accolades">
+                          <span class="michelin">★★</span>
+                      </div>
+                  </div>
+                  <div class="view-more"></div>
+              </div>
+          </div>
+    
+    <script>
+        function viewRestaurant(id) {
+            console.log(`Viewing details for restaurant #${id}`);
+        }
+        
+
+        document.querySelectorAll('.location').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.location').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+               
+            });
+        });
+    </script>
+</body>
+</html>

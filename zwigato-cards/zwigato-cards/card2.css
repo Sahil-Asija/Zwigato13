@@ -1,0 +1,272 @@
+#premiumRestaurant-outer {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.premium-restaurant-container {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.back-button,
+.help-button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.back-button:hover,
+.help-button:hover {
+    color: #d4af37;
+}
+
+h2 {
+    margin: 0;
+    font-weight: 600;
+    color: #333;
+    font-size: 24px;
+}
+
+.cuisine-categories {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.cuisine-categories::-webkit-scrollbar {
+    height: 0;
+}
+
+.category {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px;
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.category:hover {
+    background-color: #ebebeb;
+}
+
+.category.active {
+    background-color: #d4af37;
+    color: #fff;
+}
+
+#restaurant-selection {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 15px;
+}
+
+#restaurant-selection::-webkit-scrollbar {
+    height: 0px;
+}
+
+.restaurant-card {
+    min-width: 250px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.restaurant-card.selected {
+    border: 2px solid #d4af37;
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.restaurant-info {
+    padding: 12px;
+    background-color: #fff;
+}
+
+.restaurant-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.rating {
+    color: #d4af37;
+    font-size: 14px;
+}
+
+.reviews {
+    color: #777;
+    font-size: 12px;
+}
+
+.experience-selection {
+    margin: 20px 0;
+}
+
+.experience-selection h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.experience-options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.experience {
+    flex: 1;
+    min-width: calc(50% - 10px);
+    padding: 12px 15px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 30px;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.experience:hover {
+    background-color: #ebebeb;
+}
+
+.experience.selected {
+    background-color: #d4af37;
+    color: #fff;
+}
+
+.exclusive-tag {
+    font-size: 10px;
+    background: #333;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 5px;
+    margin-left: 5px;
+    position: relative;
+    top: -1px;
+}
+
+.reservation-section {
+    margin: 25px 0;
+}
+
+.date-time {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.date-selector, .time-selector {
+    flex: 1;
+}
+
+.date-selector label, .time-selector label, .guests label, .special-requests label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
+input[type="date"], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.guests {
+    margin-bottom: 15px;
+}
+
+.special-requests {
+    margin-bottom: 20px;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+.reserve-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #d4af37;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reserve-button:hover {
+    background-color: #c19b2e;
+}
+
+@media (max-width: 480px) {
+    .premium-restaurant-container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .experience-options {
+        flex-direction: column;
+    }
+    
+    .experience {
+        min-width: 100%;
+    }
+    
+    .date-time {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

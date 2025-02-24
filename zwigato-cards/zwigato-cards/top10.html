@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Restaurants</title>
+    <link rel="stylesheet" href="top10.css">
+</head>
+<body>
+    <div id="top10Restaurants-outer"> 
+        <div class="top10-restaurants-container">
+          <header class="header">
+              <button class="back-button" id="back-top10-button">&lt;</button>
+              <h2>Top 10 Restaurants</h2>
+              <button class="filter-button">Filter</button>
+          </header>
+    
+          <div class="location-filter">
+              <button class="location active">New York</button>
+              <button class="location">Tokyo</button>
+              <button class="location">Paris</button>
+              <button class="location">London</button>
+              <button class="location">Mumbai</button>
+          </div>
+    
+          <div class="year-selector">
+              <button class="year-nav prev-year">◀</button>
+              <span class="current-year">2025</span>
+              <button class="year-nav next-year">▶</button>
+          </div>
+    
+          <div class="ranking-list">
+              <div class="restaurant-rank" onclick="viewRestaurant(1)">
+                  <div class="rank-number">1</div>
+                
+                  <div class="restaurant-details">
+                      <h3>Le Bernardin</h3>
+                      <p class="cuisine">French • Seafood</p>
+                      <div class="accolades">
+                          <span class="michelin">★★★</span>
+                          <span class="award">Best Seafood 2025</span>
+                      </div>
+                  </div>
+                  <div class="view-more"></div>
+              </div>
+              
+              <div class="restaurant-rank" onclick="viewRestaurant(2)">
+                  <div class="rank-number">2</div>
+                 
+                  <div class="restaurant-details">
+                      <h3>Eleven Madison Park</h3>
+                      <p class="cuisine">Contemporary • Plant-based</p>
+                      <div class="accolades">
+                          <span class="michelin">★★★</span>
+                          <span class="award">Most Innovative</span>
+                      </div>
+                  </div>
+                  <div class="view-more"></div>
+              </div>
+              
+              <div class="restaurant-rank" onclick="viewRestaurant(3)">
+                  <div class="rank-number">3</div>
+                  
+                  <div class="restaurant-details">
+                      <h3>Per Se</h3>
+                      <p class="cuisine">American • Tasting Menu</p>
+                      <div class="accolades">
+                          <span class="michelin">★★★</span>
+                          <span class="award">Best Service</span>
+                      </div>
+                  </div>
+                  <div class="view-more"></div>
+              </div>
+              
+              <div class="restaurant-rank" onclick="viewRestaurant(4)">
+                  <div class="rank-number">4</div>
+        
+                  <div class="restaurant-details">
+                      <h3>Blue Hill at Stone Barns</h3>
+                      <p class="cuisine">Farm-to-Table • Seasonal</p>
+                      <div class="accolades">
+                          <span class="michelin">★★</span>
+                          <span class="award">Sustainability Award</span>
+                      </div>
+                  </div>
+                  <div class="view-more"></div>
+              </div>
+              
+              <div class="restaurant-rank" onclick="viewRestaurant(5)">
+                  <div class="rank-number">5</div>
+                  
+                  <div class="restaurant-details">
+                      <h3>Daniel</h3>
+                      <p class="cuisine">French • Fine Dining</p>
+                      <div class="accolades">
+                          <span class="michelin">★★</span>
+                          <span class="award">Classic Excellence</span>
+                      </div>
+                  </div>
+                  <div class="view-more"></div>
+              </div>
+              
+              <div class="load-more">
+                  <button id="show-more-btn">Show 6-10</button>
+              </div>
+          </div>
+    
+    
+    <script>
+        function viewRestaurant(id) {
+            console.log(`Viewing details for restaurant #${id}`);
+        }
+        
+        document.querySelector('#show-more-btn').addEventListener('click', function() {
+            this.textContent = 'Loading...';
+            setTimeout(() => {
+                this.parentElement.innerHTML = `
+                    <div class="restaurant-rank" onclick="viewRestaurant(6)">
+                        <div class="rank-number">6</div>
+                        <div class="restaurant-details">
+                            <h3>Atomix</h3>
+                            <p class="cuisine">Korean • Modern</p>
+                            <div class="accolades">
+                                <span class="michelin">★★</span>
+                                <span class="award">Rising Star</span>
+                            </div>
+                        </div>
+                        <div class="view-more"></div>
+                    </div>
+                `;
+            }, 1000);
+        });
+        
+        document.querySelectorAll('.location').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.location').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+               
+            });
+        });
+    </script>
+</body>
+</html>
